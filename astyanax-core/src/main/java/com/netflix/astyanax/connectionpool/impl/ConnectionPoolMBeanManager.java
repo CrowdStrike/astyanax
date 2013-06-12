@@ -50,7 +50,7 @@ public class ConnectionPoolMBeanManager {
 
             }
             catch (Exception e) {
-                LOG.error(e.getMessage());
+                LOG.error("Error registering monitor", e);
                 monitors.remove(monitorName);
             }
         }
@@ -63,7 +63,7 @@ public class ConnectionPoolMBeanManager {
             mbs.unregisterMBean(new ObjectName(monitorName));
         }
         catch (Exception e) {
-            LOG.error(e.getMessage());
+            LOG.error("Error unregistering monitor", e);
         }
     }
 
